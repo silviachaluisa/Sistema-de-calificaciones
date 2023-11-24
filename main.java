@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class main {
-    String[] Alumnos={}; //Crear un arreglo de cadena de caracteres para almacenar a los estudiantes
+    public String[] Alumnos={}; //Crear un arreglo de cadena de caracteres para almacenar a los estudiantes
     //Metodos
     public void Promedio(String Matreria)
     {
@@ -29,11 +29,18 @@ public class main {
         alumnos.setMateria(materia);
         System.out.println("Ingrese el numero de calificaciones");
         int cantidad=entrada.nextInt();
+        Double[] Notas=new Double[cantidad]; //Crear un arreglo paera almacenar las calificaciones
         for (int i=1; i<=cantidad; i++)
         {
             System.out.println("Ingrese la "+i+" calificacion: ");
             Double calif=entrada.nextDouble();
-            alumnos.setCalificacion(calif);
+            Notas[i-1]=calif;
         }
+        Double suma=0.0;
+        for (int i=0; i<cantidad; i++)
+        {
+            suma+=Notas[i];
+        }
+        Double promedio=suma/cantidad;
     }
 }
