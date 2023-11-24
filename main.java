@@ -2,21 +2,6 @@ import java.util.Scanner;
 public class main {
     public String[] Alumnos={}; //Crear un arreglo de cadena de caracteres para almacenar a los estudiantes
     //Metodos
-    public void Promedio(String Matreria)
-    {
-        Double[] Notas={};
-        Alumnos alumno;
-        for (int i=0; i<5; i++)
-        {
-            if (alumno.getMateria()==Matreria)
-            {
-                
-            }
-        }
-        
-        int suma=0;
-
-    }
     public static void main(String[] args) {
         Scanner entrada=new Scanner(System.in); //Leer la entrada por teclado
         System.out.println("Bienvenido al sistema de calificaciones del primer bimestre de la EPN");
@@ -42,5 +27,6 @@ public class main {
             suma+=Notas[i];
         }
         Double promedio=suma/cantidad;
+        alumnos.setPromedio(promedio);
     }
 }

@@ -15,7 +15,7 @@ public class Alumnos {
     public void setMateria(String materia) {
         this.Materia=materia;
     }
-    public void setCalificacion(Double promedio){
+    public void setPromedio(Double promedio){
         this.Promedio=promedio;
     }
     //GETTER
