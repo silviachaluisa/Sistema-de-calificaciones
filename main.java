@@ -10,6 +10,7 @@ public class main {
             String nombre=entrada.nextLine();
             System.out.println("Ingrese la materia que desea registrar: ");
             String materia=entrada.nextLine();
+            
         }
         
     }
