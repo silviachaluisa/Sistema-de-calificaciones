@@ -1,35 +1,33 @@
 public class Alumnos {
     //ATRIBUTOS
     public String Nombre;
-    public String Materia;
-    public Double Promedio;
+    public String Materia1, Materia2, Materia3, Materia4, Materia5;
+    public Double Nota1, Nota2, Nota3, Nota4, Nota5;
     
     //CONSTRUCTOR
-    public Alumnos() {};
+    public Alumnos(String nombre, String materia1, String materia2, String materia3, String materia4, String materia5) 
+    {
+        this.Nombre = nombre;
+        this.Materia1 = materia1;
+        this.Materia2 = materia2;
+        this.Materia3 = materia3;
+        this.Materia4 = materia4;
+        this.Materia5 = materia5;
+    };
 
     //**METODOS**
     //SETTER
-    public void setNombre(String nombre) {
-        this.Nombre=nombre;
-    }
-    public void setMateria(String materia) {
-        this.Materia=materia;
-    }
-    public void setPromedio(Double promedio){
-        this.Promedio=promedio;
+    public void setNotas(Double nota1, Double nota2, Double nota3, Double nota4, Double nota5)
+    {
+        this.Nota1 = nota1;
+        this.Nota2 = nota2;
+        this.Nota3 = nota3;
+        this.Nota4 = nota4;
+        this.Nota5 = nota5;
     }
     //GETTER
-    public String getNombre(){
-        return Nombre;
-    }
-    public String getMateria(){
-        return Materia;
-    }
+    
     public Double getPromedio(){
-        return Promedio;
+        return ((Nota1 + Nota2 + Nota3 + Nota4 + Nota5)/5);
     }
-
-
-
-
 }
