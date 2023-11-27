@@ -1,8 +1,8 @@
 import java.util.Scanner;
-public class main {
-    public String[] Alumnos={}; //Crear un arreglo de cadena de caracteres para almacenar a los estudiantes
-    //Metodos
-    public static void main(String[] args) {
+public class Sistema_registro
+{
+    public static void main(String[] args)
+    {
         Scanner entrada=new Scanner(System.in); //Leer la entrada por teclado
         System.out.println("Bienvenido al sistema de calificaciones de la EPN");
         System.out.println("De que bimestre desea ingresar las calificaciones: ");
@@ -24,17 +24,20 @@ public class main {
         {
             System.out.println("Ingreso de notas del segundo bimestre");
         }
-        Alumnos alumnos=new Alumnos();
+
+        //Consumir el carácter de nueva línea después del número
+        entrada.nextLine();
+
+        
         System.out.println("Ingrese el nombre y apellido del alumno: ");
         String nombre=entrada.nextLine();
-        alumnos.setNombre(nombre);
+        Alumnos alumnos=new Alumnos(nombre);
         System.out.println("Ingrese la materia que desea registrar: ");
         String materia=entrada.nextLine();
         alumnos.setMateria(materia);
-        System.out.println("Ingrese el numero de calificaciones");
-        int cantidad=entrada.nextInt();
-        Double[] Notas=new Double[cantidad]; //Crear un arreglo paera almacenar las calificaciones
-        for (int i=1; i<=cantidad; i++)
+
+        Double[] Notas=new Double[5]; //Crear un arreglo paera almacenar las calificaciones
+        for (int i=1; i<=5; i++)
         {
             System.out.println("Ingrese la "+i+" calificacion (entre 0 a 10): ");
             Double calif=entrada.nextDouble();
@@ -46,29 +49,9 @@ public class main {
             }
             Notas[i-1]=calif;
         }
-        Double suma=0.0;
-        for (int i=0; i<cantidad; i++)
-        {
-            suma+=Notas[i];
-        }
-        Double promedio=suma/cantidad;
-        alumnos.setPromedio(promedio);
-        System.out.println("El promedio del estudiante "+alumnos.getNombre()+" es: "+alumnos.getPromedio());
-
-    }
-    public void Aprobar(Double promedio, String nombre)
-    {
-        if (promedio>=7)
-        {
-            System.out.println("El estudiante "+ nombre+" aprobo la materia");
-        }
-        else if (promedio>=4.5 && promedio<7)
-        {
-            System.out.println("El estudiante "+ nombre+ "se quedo a supletorio");
-        }
-        else
-        {
-            System.out.println("El estudiante "+ nombre+ "no aprobo la materia");
-        }
+        alumnos.setCalificaciones(Notas[0], Notas[1], Notas[2], Notas[3], Notas[4]);
+        System.out.printf("El promedio del estudiante %s es %.2f%n",alumnos.getNombre(), alumnos.getPromedio());
+        System.out.println("El estudiante "+ alumnos.getNombre()+" "+alumnos.getAprueba_Reprueba());
+        entrada.close();
     }
 }
