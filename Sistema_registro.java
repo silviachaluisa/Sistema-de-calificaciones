@@ -50,7 +50,7 @@ public class Sistema_registro
             Notas[i-1]=calif;
         }
         alumnos.setCalificaciones(Notas[0], Notas[1], Notas[2], Notas[3], Notas[4]);
-        System.out.printf("El promedio del estudiante %s es %.2f%n",alumnos.getNombre(), alumnos.getPromedio());
+        System.out.printf("El promedio del estudiante %s en la materia de %s es %.2f%n",alumnos.getNombre(), alumnos.getMateria(), alumnos.getPromedio());
         System.out.println("El estudiante "+ alumnos.getNombre()+" "+alumnos.getAprueba_Reprueba());
         entrada.close();
     }
