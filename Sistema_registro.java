@@ -4,7 +4,7 @@ public class Sistema_registro
     public static void main(String[] args)
     {
         Scanner entrada=new Scanner(System.in); //Leer la entrada por teclado
-        System.out.println("Bienvenido al sistema de calificaciones de la EPN");
+        System.out.println("\"Bienvenido al sistema de calificaciones de la EPN\"");
         System.out.println("De que bimestre desea ingresar las calificaciones: ");
         System.out.println("1.- Primer bimestre");
         System.out.println("2.- Segundo bimestre");
